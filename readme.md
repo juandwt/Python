@@ -11,7 +11,28 @@
 4. [3D animation](#3d-animation)
 
 ## My first 2D graph
-...
+
+```python
+import numpy as np
+from vispy import scene, app
+
+canvas = scene.SceneCanvas(keys='interactive', size=(800, 600), show=True, bgcolor='#121212')
+view = canvas.central_widget.add_view()
+
+# rect=(x0, y0,, width, height)
+view.camera = scene.PanZoomCamera(rect=(0, -1.5, 3 * np.pi, 3))
+
+x = np.linspace(0, 3 * np.pi, 100)
+cos = scene.visuals.Line(pos=np.column_stack((x, np.cos(x))), color='#0fffff', width=2)
+sin = scene.visuals.Line(pos=np.column_stack((x, np.sin(x))), color='#ffffff', width=2)
+
+view.add(cos)
+view.add(sin)
+
+
+app.run()
+```
+
 
 ## 2D animation
 ...
