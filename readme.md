@@ -37,7 +37,7 @@ app.run()
   <img src="https://github.com/user-attachments/assets/1778cea7-5cae-4d06-b060-384107546534" alt="Image" width="600">
 </p>
 
-
+### Divide canvas
 
 ## 2D animation
 ...
