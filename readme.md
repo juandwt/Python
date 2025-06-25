@@ -6,9 +6,10 @@
 
 ## Table of Contents
 1. [My first 2D graph](#my-first-2d-graph)
-2. [2D animation](#2d-animation)
-3. [3D graph](#3d-graph)
-4. [3D animation](#3d-animation)
+   - [Divide Canvas](#Divide-canvas)
+3. [2D animation](#2d-animation)
+4. [3D graph](#3d-graph)
+5. [3D animation](#3d-animation)
 
 ## My first 2D graph
 
