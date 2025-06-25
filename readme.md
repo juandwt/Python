@@ -33,6 +33,11 @@ view.add(sin)
 app.run()
 ```
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1778cea7-5cae-4d06-b060-384107546534" alt="Image" width="600">
+</p>
+
+
 
 ## 2D animation
 ...
