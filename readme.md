@@ -44,6 +44,60 @@ app.run()
 
 Tiro parabolico animación
 
+```python
+from vispy import scene, app
+import numpy as np
+
+# constants 
+
+g  = 9.81
+v  = 4
+V  = np.array([v * np.cos(np.radians(45)), v * np.sin(np.radians(45))]) 
+r  = np.array([0, 0])
+t  = 0
+dt = 0.01
+position = []
+
+canvas = scene.SceneCanvas(keys='interactive', size=(800, 600), show=True, bgcolor='#121212')
+view   = canvas.central_widget.add_view()
+
+view.camera = scene.PanZoomCamera(rect=(0, 2, 2, 2))
+
+x_axis = scene.visuals.Line(pos=np.array([[0, 0], [2, 0]]), color='#ffffff', width=2)
+y_axis = scene.visuals.Line(pos=np.array([[0, 0], [0, 2]]), color='#ffffff', width=2)
+view.add(x_axis)
+view.add(y_axis)
+
+view.camera = 'panzoom'
+view.camera.set_range(x=(0, 2), y=(0, 2))
+
+projectil = scene.visuals.Markers()
+projectil.set_data(np.array([[0, 0]]), face_color='#ffffff', size=20)
+view.add(projectil)
+
+trajectory = scene.visuals.Line(pos=np.array([[0, 0]]), color='#121212', width=2)
+view.add(trajectory)
+
+def update(ev):
+    global t, position, V, r
+    x = r[0] + V[0] * t
+    y = r[1] + V[1] * t - 0.5 * g * t**2
+    position.append([x, y])
+    projectil.set_data(np.array([[x, y]]), face_color='#ffffff', size=20)
+    trajectory.set_data(np.array(position), color='#ffffff', width=2)
+    t += dt
+    if y < 0:
+        t = 0
+        position.clear()
+
+
+timer = app.Timer()
+timer.connect(update)
+timer.start(dt)
+
+app.run()
+```
+
 
 ## 3D graph
 ...
