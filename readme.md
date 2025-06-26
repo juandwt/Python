@@ -41,7 +41,9 @@ app.run()
 ### Divide canvas
 
 ## 2D animation
-...
+
+Tiro parabolico animación
+
 
 ## 3D graph
 ...
