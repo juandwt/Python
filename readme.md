@@ -98,6 +98,9 @@ timer.start(dt)
 app.run()
 ```
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5c54528b-f908-4d23-b0f7-95b1ff1841ff" alt="Image" width="600">
+</p>
 
 ## 3D graph
 ...
